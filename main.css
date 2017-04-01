@@ -1,0 +1,115 @@
+html {
+	height: 100%;
+	background: -webkit-linear-gradient(top, #222, #333);
+}
+body {
+	display: flex; 
+	margin: 0;
+	height: 100%;
+	justify-content: center; /*水平居中*/
+	align-items: center; /*垂直居中*/
+}
+
+/*flex-direction/flex-wrap/flex-flow/justify-content/align-items/align-content 操作容器*/
+/*order/flex-grow/flex-shrink/flex-basis/flex/align-self 操作元素*/
+
+/*容器*/
+div[class$='face'] { /*$=以face结尾的；^=以face开头的；*=包含face的 */
+	margin: 16px;
+	padding: 4px;
+	background-color: #e7e7e7;
+	width: 104px;
+	height: 104px;
+	border-radius: 10%;
+	box-shadow: 
+		0 5px white inset, 
+		0 -5px #ddd inset,
+		5px 0 #d7d7d7 inset,
+		-5px 0 #d7d7d7 inset; /*上下左右阴影，inset内阴影*/
+}
+
+/*点*/
+.pip {
+	display: block;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	margin: 4px;
+	background-color: #333;
+	box-shadow: 
+		0 3px #111 inset,
+		0 -3px #555 inset;
+}
+
+/*第一个*/
+.first_face {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*第二个*/
+.second_face {
+	display: flex;
+	justify-content: space-between;
+}
+.second_face .pip:nth-child(2) { /* nth-child从1开始 */
+	align-self: flex-end;
+}
+
+/*第三个*/
+.third_face {
+	display: flex;
+	justify-content: space-between;
+}
+.third_face .pip:nth-child(2) {
+	align-self: center;
+}
+.third_face .pip:nth-child(3) {
+	align-self: flex-end;
+}
+
+/*第四个*/
+.forth1_face {
+	display: flex;
+	justify-content: space-between;
+}
+.forth1_face .column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+/*.forth2_face {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.forth2_face .row {
+	display: flex;
+	justify-content: space-between;
+}*/
+
+/*第五个*/
+.fifth_face {
+	display: flex;
+	justify-content: space-between;
+}
+.fifth_face .column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.fifth_face .column:nth-child(2) {
+	align-self: center;
+}
+
+/*第六个*/
+.sixth_face {
+	display: flex;
+	justify-content: space-between;
+}
+.sixth_face .column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
